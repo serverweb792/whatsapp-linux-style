@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Environment
+.env
+
+# WhatsApp App (generated)
+Applications/
+
+# Workspace/VSCode
+.history/
+.vscode/
+*.code-workspace
+
+# Temporary / OS
+.DS_Store
+Thumbs.db
+/tmp/
+
+# Our other scripts (not part of this project)
+*.py
+*.js
+*.png
+*.json
+*.log
+*.sh
+!install_whatsapp.sh
+!README.md
+!LICENSE
+!whatsapp-style.css

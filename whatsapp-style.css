@@ -1,0 +1,24 @@
+/* Modern Windows 11-like theme for WhatsApp Web */
+
+/* Adjust sidebar width to look more like the desktop app */
+._aigv._aigw {
+    flex: 0 0 30% !important;
+    max-width: 350px !important;
+}
+
+/* Background color refinement */
+body {
+    background-color: #f0f2f5 !important;
+}
+
+/* Rounded corners for various elements */
+.app-wrapper-web ._aigv {
+    border-radius: 8px !important;
+}
+
+/* Dark mode adjustments if detected */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0c1317 !important;
+    }
+}
