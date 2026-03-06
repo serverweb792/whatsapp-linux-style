@@ -6,7 +6,7 @@
 APP_NAME="WhatsApp"
 INSTALL_DIR="$HOME/Applications/WhatsApp-linux"
 ICON_URL="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1024px-WhatsApp.svg.png"
-ICON_PATH="/tmp/whatsapp_icon.png"
+ICON_PATH="$INSTALL_DIR/whatsapp_icon.png"
 CSS_FILE="$(pwd)/whatsapp-style.css"
 
 echo "--- Iniciando instalação do WhatsApp (estilo Windows) ---"
@@ -22,12 +22,12 @@ if ! command -v nativefier &> /dev/null; then
     sudo npm install -g nativefier
 fi
 
-# 2. Download Icon
+# 2. Create Build Directory
+mkdir -p "$INSTALL_DIR"
+
+# 3. Download Icon
 echo "Baixando ícone do WhatsApp..."
 curl -sL "$ICON_URL" -o "$ICON_PATH"
-
-# 3. Create Build Directory
-mkdir -p "$INSTALL_DIR"
 
 # 4. Build Application
 echo "Criando aplicativo Electron (isso pode demorar um pouco)..."
@@ -58,6 +58,7 @@ Exec="$EXE_PATH" --no-sandbox --disable-gpu
 Terminal=false
 Type=Application
 Icon=$ICON_PATH
+StartupWMClass=whatsapp-nativefier-d40211
 Categories=Network;InstantMessaging;
 Comment=WhatsApp Desktop Client
 EOF
